@@ -46,6 +46,12 @@ const menuItems: MenuItem[] = [
     href: '/production'
   },
   {
+    id: 'process-planning',
+    label: '工程計画',
+    icon: Calendar,
+    href: '/process-planning'
+  },
+  {
     id: 'kpi',
     label: 'KPIダッシュボード',
     icon: BarChart3,

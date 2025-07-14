@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useAuthStore } from '@/src/store/auth-store';
 import { useProcessPlanningStore } from '@/src/store/process-planning-store';
 import { redirect } from 'next/navigation';
+import { AuthLayout } from '@/src/components/layout/AuthLayout';
 import { Card } from '@/src/components/ui/card';
 import { Badge } from '@/src/components/ui/badge';
 import { Button } from '@/src/components/ui/button';
@@ -81,8 +82,9 @@ export default function ProcessPlanningPage() {
   };
 
   return (
-    <div className="h-full bg-gray-50 p-6">
-      <div className="mx-auto max-w-[1600px]">
+    <AuthLayout>
+      <div className="h-full bg-gray-50 p-6">
+        <div className="mx-auto max-w-[1600px]">
         {/* ヘッダー */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
@@ -276,7 +278,8 @@ export default function ProcessPlanningPage() {
             )}
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </AuthLayout>
   );
 }
