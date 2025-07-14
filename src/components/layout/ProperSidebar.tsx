@@ -14,7 +14,8 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  Users
+  Users,
+  ClipboardList
 } from 'lucide-react';
 import { useAuthStore } from '@/src/store/auth-store';
 
@@ -48,7 +49,7 @@ const menuItems: MenuItem[] = [
   {
     id: 'process-planning',
     label: '工程計画',
-    icon: Calendar,
+    icon: ClipboardList,
     href: '/process-planning'
   },
   {
