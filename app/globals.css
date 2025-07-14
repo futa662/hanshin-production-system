@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* フォントの設定 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 160 84% 39%;
+    --radius: 0.375rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic UI', 'Meiryo', sans-serif;
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+}
+
+/* 基本的なレイアウト設定 */
+.main-layout {
+  @apply min-h-screen bg-gray-50;
+}
+
+/* カード基本スタイル */
+.card {
+  @apply bg-white rounded-lg border border-gray-200 shadow-sm;
+}
+
+.card:hover {
+  @apply shadow-md transition-shadow duration-200;
+}
+
+/* テーブルスタイル */
+.table {
+  @apply w-full text-left;
+}
+
+.table thead {
+  @apply bg-gray-50 text-xs font-medium text-gray-700 uppercase tracking-wider;
+}
+
+.table th {
+  @apply px-6 py-3 border-b border-gray-200;
+}
+
+.table td {
+  @apply px-6 py-4 text-sm text-gray-900 border-b border-gray-100;
+}
+
+.table tbody tr:hover {
+  @apply bg-gray-50 transition-colors duration-150;
+}
+
+/* ボタンスタイル */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md transition-colors duration-150;
+}
+
+.btn-primary {
+  @apply bg-emerald-500 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500;
+}
+
+/* ステータスバッジ */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-emerald-100 text-emerald-800;
+}
+
+.badge-warning {
+  @apply bg-amber-100 text-amber-800;
+}
+
+.badge-error {
+  @apply bg-red-100 text-red-800;
+}
+
+.badge-neutral {
+  @apply bg-gray-100 text-gray-800;
+}
+
+/* アイコンボタン */
+.icon-btn {
+  @apply p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 transition-colors duration-150;
+}
+
+/* フォーム要素 */
+.input {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-sm focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500;
+}
+
+.select {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-sm focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 bg-white;
+}
+
+/* スクロールバー */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* ユーティリティクラス */
+.text-primary {
+  @apply text-emerald-500;
+}
+
+.text-secondary {
+  @apply text-gray-600;
+}
+
+.text-muted {
+  @apply text-gray-400;
+}
+
+/* 余白の調整 */
+.section {
+  @apply px-6 py-8;
+}
+
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* グリッドレイアウト */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* アニメーション削除 */
+* {
+  animation: none !important;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+/* フォーカススタイル */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  @apply ring-2 ring-emerald-500 ring-offset-2;
+}
+
+/* 日本語フォント最適化 */
+@font-face {
+  font-family: 'YuGothic';
+  src: local('Yu Gothic Medium'), local('YuGothic-Medium');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'YuGothic';
+  src: local('Yu Gothic Bold'), local('YuGothic-Bold');
+  font-weight: 700;
+}
