@@ -56,3 +56,38 @@ export const COLORS = {
     info: '#3B82F6'        // ブルー
   }
 } as const;
+
+// サイドバーのメニュー構成
+export const MENU_ITEMS = [
+  {
+    id: 'dashboard',
+    label: 'ダッシュボード',
+    href: '/',
+    icon: 'LayoutDashboard'
+  },
+  {
+    id: 'monitoring',
+    label: '監視',
+    icon: 'Monitor',
+    children: [
+      { id: 'production', label: '製造ライン', href: '/production', icon: 'Factory' },
+      { id: 'manufacturing', label: '機械加工', href: '/manufacturing', icon: 'Cog' },
+      { id: 'staff', label: 'スタッフ', href: '/staff', icon: 'Users' },
+    ]
+  },
+  {
+    id: 'management',
+    label: '管理',
+    href: '/management',
+    icon: 'TrendingUp'
+  },
+  {
+    id: 'settings',
+    label: '設定',
+    icon: 'Settings',
+    children: [
+      { id: 'system-settings', label: 'システム設定', href: '/settings', icon: 'Settings' },
+      { id: 'users', label: 'ユーザー管理', href: '/users', icon: 'Users' },
+    ]
+  }
+];
