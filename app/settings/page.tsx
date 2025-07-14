@@ -1,8 +1,8 @@
 'use client';
 
-import { useAuthStore } from '@/store/auth-store';
+import { useAuthStore } from '@/src/store/auth-store';
 import { redirect } from 'next/navigation';
-import { Card } from '@/components/ui/card';
+import { Card } from '@/src/components/ui/card';
 import { Settings, Construction, Wrench, Server, Bell, Shield } from 'lucide-react';
 
 export default function SettingsPage() {
