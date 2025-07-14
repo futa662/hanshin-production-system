@@ -107,12 +107,12 @@ export function ProperSidebar({ isCollapsed, setIsCollapsed }: ProperSidebarProp
         <div key={item.id} className="mb-1">
           <button
             onClick={() => toggleExpanded(item.id)}
-            className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-md transition-colors
+            className={`w-full flex items-center justify-between px-4 py-3 text-base rounded-lg transition-colors
               ${depth === 0 ? 'hover:bg-gray-100' : 'hover:bg-gray-50'}
               ${isCollapsed ? 'justify-center' : ''}`}
           >
             <div className="flex items-center">
-              {Icon && <Icon className={`h-5 w-5 text-gray-500 ${isCollapsed ? '' : 'mr-3'}`} />}
+              {Icon && <Icon className={`h-5 w-5 text-gray-500 ${isCollapsed ? '' : 'mr-4'}`} />}
               {!isCollapsed && <span className="text-gray-700">{item.label}</span>}
             </div>
             {!isCollapsed && (
@@ -134,7 +134,7 @@ export function ProperSidebar({ isCollapsed, setIsCollapsed }: ProperSidebarProp
       <Link
         key={item.id}
         href={item.href || '#'}
-        className={`flex items-center px-3 py-2.5 text-sm rounded-md transition-colors
+        className={`flex items-center px-4 py-3 text-base rounded-lg transition-colors
           ${isActive
             ? 'bg-emerald-50 text-emerald-700 font-medium'
             : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
@@ -143,7 +143,7 @@ export function ProperSidebar({ isCollapsed, setIsCollapsed }: ProperSidebarProp
           ${isCollapsed ? 'justify-center' : ''}`}
       >
         {Icon && <Icon className={`h-5 w-5 ${isActive ? 'text-emerald-600' : 'text-gray-500'} ${
-          isCollapsed ? '' : 'mr-3'
+          isCollapsed ? '' : 'mr-4'
         }`} />}
         {!isCollapsed && <span>{item.label}</span>}
       </Link>
@@ -178,13 +178,13 @@ export function ProperSidebar({ isCollapsed, setIsCollapsed }: ProperSidebarProp
         </div>
 
         {/* メインナビゲーション */}
-        <nav className="flex-1 overflow-y-auto px-3 py-4">
+        <nav className="flex-1 overflow-y-auto px-4 py-6">
           {!isCollapsed && (
-            <p className="mb-3 px-3 text-xs font-medium uppercase tracking-wider text-gray-400">
+            <p className="mb-4 px-4 text-sm font-medium uppercase tracking-wider text-gray-400">
               主要メニュー
             </p>
           )}
-          <div className="space-y-1">
+          <div className="space-y-2">
             {menuItems.map(item => renderMenuItem(item))}
           </div>
         </nav>
