@@ -76,6 +76,12 @@ export const MENU_ITEMS = [
     ]
   },
   {
+    id: 'planning',
+    label: '工程計画',
+    href: '/process-planning',
+    icon: 'Calendar'
+  },
+  {
     id: 'management',
     label: '管理',
     href: '/management',
