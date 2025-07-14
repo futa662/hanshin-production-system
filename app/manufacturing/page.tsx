@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useMachineStore } from '@/src/store/machine-store';
 import { MachineStatusTable } from '@/src/components/machines/MachineStatusTable';
 import { MachineStatusTimeline } from '@/src/components/machines/MachineStatusTimeline';
+import { MachineStatusTimelineEnhanced } from '@/src/components/machines/MachineStatusTimelineEnhanced';
 import { Activity, AlertCircle, Pause, Power, Grid3X3, Clock } from 'lucide-react';
 import { STATUS_COLORS } from '@/src/lib/constants';
 import { AuthLayout } from '@/src/components/layout/AuthLayout';
@@ -138,11 +139,11 @@ export default function ManufacturingPage() {
         <div className="space-y-4">
           <div className="bg-white rounded-lg shadow-sm p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              機械稼働タイムライン - 過去24時間
+              機械稼働タイムライン
             </h3>
             <div className="space-y-3">
               {machines.slice(0, 10).map((machine) => (
-                <MachineStatusTimeline
+                <MachineStatusTimelineEnhanced
                   key={machine.id}
                   machine={machine}
                   logs={logs}
