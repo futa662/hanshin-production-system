@@ -134,7 +134,7 @@ export function ProperSidebar({ isCollapsed, setIsCollapsed }: ProperSidebarProp
       <Link
         key={item.id}
         href={item.href || '#'}
-        className={`flex items-center px-3 py-2 mb-1 text-sm rounded-md transition-colors
+        className={`flex items-center px-3 py-2.5 text-sm rounded-md transition-colors
           ${isActive
             ? 'bg-emerald-50 text-emerald-700 font-medium'
             : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
@@ -180,11 +180,13 @@ export function ProperSidebar({ isCollapsed, setIsCollapsed }: ProperSidebarProp
         {/* メインナビゲーション */}
         <nav className="flex-1 overflow-y-auto px-3 py-4">
           {!isCollapsed && (
-            <p className="mb-4 px-3 text-xs font-medium uppercase tracking-wider text-gray-400">
+            <p className="mb-3 px-3 text-xs font-medium uppercase tracking-wider text-gray-400">
               主要メニュー
             </p>
           )}
-          {menuItems.map(item => renderMenuItem(item))}
+          <div className="space-y-1">
+            {menuItems.map(item => renderMenuItem(item))}
+          </div>
         </nav>
 
         {/* ユーザー情報 */}
